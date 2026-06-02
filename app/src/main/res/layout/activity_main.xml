@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:orientation="vertical">
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!--  顶部导航栏（问题5修复：移除头像，只保留标题）  -->
+    <!-- ═══════════════════════════════════════════ -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:paddingTop="24dp"
+        android:background="#1ABD9F"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="CampusFit"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!--  可滚动内容区                               -->
+    <!-- ═══════════════════════════════════════════ -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- ─────────────────────────────────── -->
+            <!--  欢迎区（问题1修复：头像移到问候语左侧）  -->
+            <!-- ─────────────────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginBottom="6dp">
+
+                <!-- 补充头像-->
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_greeting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="你好，邓杨杨 👋"
+                        android:textColor="#114D84"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="今天也要元气满满哦"
+                        android:textColor="#8A94A6"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <!-- 补充快捷入口（右侧齿轮） -->
+            </LinearLayout>
+
+            <!-- ─────────────────────────────────── -->
+            <!--  今日概览卡片                        -->
+            <!-- ─────────────────────────────────── -->
+            <!-- ====================== 今日概览卡片（显示BMI + 打卡分钟） ====================== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="#FFFFFF"
+                android:elevation="2dp"
+                android:orientation="vertical"
+                android:padding="18dp"
+                android:radius="12dp">
+
+                <!-- 显示 BMI -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="当前 BMI"
+                        android:textColor="#8A94A6"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/tvTodo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--.--"
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        android:textColor="#114D84"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+                <!-- 分割线 -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E8ECEF"
+                    android:layout_marginVertical="16dp"/>
+
+                <!-- 显示 本周打卡分钟（任务三必须） -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="本周运动"
+                        android:textColor="#8A94A6"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/tvStatExercise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 分钟"
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        android:textColor="#1ABD9F"
+                        android:layout_marginTop="4dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <!-- ─────────────────────────────────── -->
+            <!--  功能入口标题                        -->
+            <!-- ─────────────────────────────────── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="功能中心"
+                android:textColor="#1C5D96"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <!-- ─────────────────────────────────── -->
+            <!--  2×2 功能入口                        -->
+            <!-- ─────────────────────────────────── -->
+            <!-- 第一行：健康评估 + 运动打卡 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:id="@+id/layoutBmi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:elevation="2dp"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!--                    补充图片-->
+                    <TextView
+                        android:id="@+id/layoutBmi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="健康评估"
+                        android:textColor="#1C5D96"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                    <!--                    补充副标题-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutCheckin"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:elevation="2dp"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!--                    补充图片-->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="运动打卡"
+                        android:textColor="#1C5D96"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                    <!--                    补充副标题-->
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 第二行：健康目标 + 健康统计 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:id="@+id/layoutGoal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:elevation="2dp"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <!--                    补充图片-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="健康目标"
+                        android:textColor="#1C5D96"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                    <!--                    补充副标题-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutStats"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:elevation="2dp"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <!--                    补充图片-->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="健康统计"
+                        android:textColor="#1C5D96"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                    <!--                    补充副标题-->
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ─────────────────────────────────── -->
+            <!--  底部快捷按钮                        -->
+            <!-- ─────────────────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnHistory"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@null"
+                    android:text="历史记录"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btnSettings"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@null"
+                    android:text="我的设置"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- 底部版本信息 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="CampusFit v1.0 · 校园健康助手"
+                android:textColor="#C0C6D0"
+                android:textSize="11sp" />
+            <TextView
+                android:id="@+id/tvContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="联系我们"
+                android:textColor="#C0C6D0"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

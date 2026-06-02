@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5F7FA"
+        android:orientation="vertical">
+
+        <!-- 顶部导航栏 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#1ABD9F"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:id="@+id/tvBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="返回"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="BMI计算器"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="帮助"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"/>
+
+        </RelativeLayout>
+
+        <!-- BMI结果卡片 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:background="#FFFFFF"
+            android:layout_margin="16dp"
+            android:radius="12dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="您的BMI指数"
+                    android:textSize="18sp"
+                    android:textColor="#333333"
+                    android:layout_marginLeft="8dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="--"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                android:textColor="#1ABD9F"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/tvResultTip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="请先完成计算"
+                android:textSize="16sp"
+                android:textColor="#666666"/>
+
+        </LinearLayout>
+
+        <!-- 身高输入区 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="身高 (cm)"
+                    android:textColor="#1C5D96"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="6dp"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etHeight"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="#FFFFFF"
+                android:paddingLeft="16dp"
+                android:hint="请输入身高"
+                android:textColor="#114D84"
+                android:inputType="numberDecimal"/>
+
+        </LinearLayout>
+
+        <!-- 体重输入区 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="体重 (kg)"
+                    android:textColor="#1C5D96"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="6dp"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etWeight"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="#FFFFFF"
+                android:paddingLeft="16dp"
+                android:hint="请输入体重"
+                android:textColor="#114D84"
+                android:inputType="numberDecimal"/>
+
+        </LinearLayout>
+
+        <!-- 操作按钮 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:layout_marginTop="32dp">
+
+            <Button
+                android:id="@+id/btnCalculate"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:background="#1ABD9F"
+                android:gravity="center"
+                android:text="开始计算"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_marginRight="8dp"/>
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:background="#99ADBE"
+                android:gravity="center"
+                android:text="重置"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_marginLeft="8dp"/>
+
+        </LinearLayout>
+
+        <!-- BMI分级说明区 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BMI 中国标准"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"/>
+
+            <!-- 偏瘦 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="12dp">
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="#4A90E2"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="偏瘦"
+                    android:layout_marginLeft="8dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="BMI ＜ 18.5"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <!-- 正常 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="#1ABD9F"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="正常"
+                    android:layout_marginLeft="8dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="18.5 ≤ BMI ＜ 24.0"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <!-- 偏胖 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="#F5A623"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="偏胖"
+                    android:layout_marginLeft="8dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="24.0 ≤ BMI ＜ 28.0"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <!-- 肥胖 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="#F05A5A"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="肥胖"
+                    android:layout_marginLeft="8dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="BMI ≥ 28.0"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

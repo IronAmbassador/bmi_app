@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:orientation="vertical">
+
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!--  顶部导航栏                                         -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:paddingTop="24dp"
+        android:background="#1ABD9F"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:text="‹ 返回"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:padding="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="历史记录"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- 右侧"删除目标"按钮（仅详情页可见，由代码控制） -->
+        <TextView
+            android:id="@+id/tv_delete_goal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:text="删除"
+            android:textColor="#FFE0E0"
+            android:textSize="14sp"
+            android:padding="8dp"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

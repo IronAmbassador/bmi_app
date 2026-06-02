@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ===================== 模块一：顶部导航栏 ===================== -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#1ABD9F"
+            android:paddingHorizontal="16dp">
+
+            <TextView
+                android:id="@+id/tvBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="返回"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="运动打卡"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvCheckinHistory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="历史"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"/>
+
+        </RelativeLayout>
+
+        <!-- ===================== 模块二：今日运动进度卡片 ===================== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:layout_margin="16dp"
+            android:padding="20dp"
+            android:elevation="2dp"
+            android:radius="12dp">
+
+            <!-- 标题行：图标 + 今日运动进度 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="今日运动进度"
+                    android:textSize="18sp"
+                    android:textColor="#333333"
+                    android:layout_marginLeft="8dp"/>
+            </LinearLayout>
+
+            <!-- 数值区：已完成分钟 + 目标 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tvTodayActual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="48sp"
+                    android:textStyle="bold"
+                    android:textColor="#114D84"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 分钟 / "
+                    android:textSize="18sp"
+                    android:textColor="#8A94A6"/>
+
+                <TextView
+                    android:id="@+id/tvTodayGoalNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30"
+                    android:textSize="18sp"
+                    android:textColor="#1ABD9F"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 分钟目标"
+                    android:textSize="18sp"
+                    android:textColor="#8A94A6"/>
+            </LinearLayout>
+
+            <!-- 进度条 -->
+            <ProgressBar
+                android:id="@+id/progressToday"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:layout_marginTop="12dp"
+                android:max="30"
+                android:progress="0"
+                android:progressTint="#1ABD9F"
+                android:backgroundTint="#E8ECEF"/>
+
+            <!-- 底部提示文字 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="加油，今天还没有运动记录"
+                android:textSize="14sp"
+                android:textColor="#8A94A6"/>
+
+        </LinearLayout>
+
+        <!-- ===================== 模块三：运动计时卡片 ===================== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:layout_marginHorizontal="16dp"
+            android:padding="20dp"
+            android:elevation="2dp"
+            android:radius="12dp">
+
+            <!-- 3a. 时长选择标题行 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="设定运动时长"
+                    android:textSize="16sp"
+                    android:textColor="#8A94A6"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/tvSelectedDurationLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25 分钟"
+                    android:textSize="16sp"
+                    android:textColor="#1ABD9F"/>
+            </LinearLayout>
+
+            <!-- 3b. 五个时长快选按钮（等宽排列） -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnTimer15"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="15"
+                    android:textColor="#114D84"
+                    android:textSize="16sp"
+                    android:background="@drawable/btn_timer_normal"
+                    android:layout_margin="4dp"/>
+
+                <Button
+                    android:id="@+id/btnTimer25"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="25"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:background="@drawable/btn_timer_selected"
+                    android:layout_margin="4dp"/>
+
+                <Button
+                    android:id="@+id/btnTimer30"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="30"
+                    android:textColor="#114D84"
+                    android:textSize="16sp"
+                    android:background="@drawable/btn_timer_normal"
+                    android:layout_margin="4dp"/>
+
+                <Button
+                    android:id="@+id/btnTimer45"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="45"
+                    android:textColor="#114D84"
+                    android:textSize="16sp"
+                    android:background="@drawable/btn_timer_normal"
+                    android:layout_margin="4dp"/>
+
+                <Button
+                    android:id="@+id/btnTimer60"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="60"
+                    android:textColor="#114D84"
+                    android:textSize="16sp"
+                    android:background="@drawable/btn_timer_normal"
+                    android:layout_margin="4dp"/>
+
+            </LinearLayout>
+
+            <!-- 3c. 倒数显示区 -->
+            <TextView
+                android:id="@+id/tvTimerDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="25:00"
+                android:textSize="72sp"
+                android:textStyle="bold"
+                android:textColor="#114D84"/>
+
+            <TextView
+                android:id="@+id/tvTimerHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="选择时长，点击开始运动"
+                android:textSize="16sp"
+                android:textColor="#8A94A6"/>
+
+            <!-- 3d. 主操作按钮 -->
+            <Button
+                android:id="@+id/btnTimerStart"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="32dp"
+                android:text="▶ 开始运动"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:background="@drawable/btn_green_full"/>
+
+            <!-- 底部定位提示 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@android:drawable/ic_menu_compass" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="正在定位..."
+                    android:textSize="13sp"
+                    android:textColor="#8A94A6"
+                    android:layout_marginLeft="6dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 底部快捷记录提示 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:text="💡 已完成运动，直接记录 25 分钟 →"
+            android:textSize="15sp"
+            android:textColor="#8A94A6"/>
+
+    </LinearLayout>
+
+</ScrollView>

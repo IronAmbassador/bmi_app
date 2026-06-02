@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:id="@+id/settings"
+    android:orientation="vertical">
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!--  顶部导航栏                                  -->
+    <!-- ═══════════════════════════════════════════ -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:paddingTop="24dp"
+        android:background="#1ABD9F"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:id="@+id/tvBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="&lt; 返回"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="设置"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!--  可滚动内容区                                -->
+    <!-- ═══════════════════════════════════════════ -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- ─────────────────────────────────── -->
+            <!--  头像与昵称区                        -->
+            <!-- ─────────────────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:elevation="2dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="24dp"
+                android:paddingBottom="20dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
+
+                <ImageView
+                    android:id="@+id/ivSettingsAvatar"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:contentDescription="头像"
+                    android:scaleType="centerCrop"
+                    android:clipToOutline="true"
+                    android:padding="6dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="昵称"
+                    android:textColor="#1C5D96"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etSettingsName"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:hint="请输入昵称"
+                    android:inputType="textPersonName"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColor="#333333"
+                    android:textColorHint="#C0C6D0"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+
+            <!-- ─────────────────────────────────── -->
+            <!--  提醒设置区（Switch 开关）           -->
+            <!-- ─────────────────────────────────── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="提醒设置"
+                android:textColor="#1C5D96"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:elevation="1dp"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp">
+
+                <!-- BMI 评估提醒 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="每周 BMI 评估提醒"
+                        android:textColor="#333333"
+                        android:textSize="14sp" />
+
+                    <Switch
+                        android:id="@+id/switchNotifyBmi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:thumbTint="#1ABD9F"
+                        android:trackTint="#B2EAE0" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#F0F3F6" />
+
+                <!-- 运动打卡提醒 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="每日运动打卡提醒"
+                        android:textColor="#333333"
+                        android:textSize="14sp" />
+
+                    <Switch
+                        android:id="@+id/switchNotifyExercise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:thumbTint="#1ABD9F"
+                        android:trackTint="#B2EAE0" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#F0F3F6" />
+
+                <!-- 每日目标提醒（修复2：替换无功能的饮水提醒） -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="每日目标完成提醒"
+                            android:textColor="#8A94A6"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="每天中午 12:00 提醒检查目标"
+                            android:textColor="#C0C6D0"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <Switch
+                        android:id="@+id/switchNotifyWater"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:thumbTint="#99ADBE"
+                        android:trackTint="#DDE2E8" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ─────────────────────────────────── -->
+            <!--  版本信息                            -->
+            <!-- ─────────────────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginBottom="28dp"
+                android:elevation="1dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="版本信息"
+                    android:textColor="#333333"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="12dp"
+                    android:paddingTop="3dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="3dp"
+                    android:text="v1.0.0"
+                    android:textColor="#666666"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- ─────────────────────────────────── -->
+            <!--  底部双按钮                          -->
+            <!-- ─────────────────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnSaveSettings"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:text="保存设置"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="@null"
+                    app:backgroundTint="@null" />
+
+                <Button
+                    android:id="@+id/btnResetSettings"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:text="恢复默认"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:backgroundTint="@null"
+                    app:backgroundTint="@null" />
+            </LinearLayout>
+
+            <!-- 底部说明 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="CampusFit v1.0 · 校园健康助手"
+                android:textColor="#C0C6D0"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
