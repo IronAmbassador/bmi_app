@@ -68,7 +68,7 @@ public class SettingsActivity extends AppCompatActivity {
         String name = sp.getString("nickname", "");
         boolean notifyBmi = sp.getBoolean("notifyBmi", true);
         boolean notifyExercise = sp.getBoolean("notifyExercise", true);
-        boolean notifyWater = sp.getBoolean("notifuWater", true);
+        boolean notifyWater = sp.getBoolean("notifyWater", true);
         // 3.显示到网页上
         etName.setText(name);
         switchBmi.setChecked(notifyBmi);
