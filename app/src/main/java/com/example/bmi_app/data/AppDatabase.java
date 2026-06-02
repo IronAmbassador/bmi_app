@@ -23,10 +23,10 @@ public abstract class AppDatabase extends RoomDatabase {
         if (instance == null) { // 首次调用getInstance时,instance为空
             // 实例化
             instance = Room.databaseBuilder(
-                    context.getApplicationContext(), // 获取当前应用的上下文，或者说获取当前应用的包名
-                    AppDatabase.class, // 希望构建器实例化的对象
-                    "campusfit.db" // 制定要创建的数据库名称
-            ).build(); // 让构建器给你创建一个数据库的实例
+                    context.getApplicationContext(),
+                    AppDatabase.class,
+                    "campusfit.db"
+            ).allowMainThreadQueries().build();
         }
         return instance;
     }

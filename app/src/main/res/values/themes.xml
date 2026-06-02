@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Bmi_app" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.Bmi_app" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#1ABD9F</item>
+        <item name="colorPrimaryDark">#148F7A</item>
+        <item name="colorAccent">#1ABD9F</item>
+    </style>
 </resources>

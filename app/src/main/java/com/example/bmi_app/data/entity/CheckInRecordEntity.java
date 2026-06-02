@@ -1,4 +1,4 @@
-package com.example.test_1.data.entity;
+package com.example.bmi_app.data.entity;
 
 public class CheckInRecordEntity {
 }
