@@ -51,18 +51,18 @@ public class CheckInActivity extends AppCompatActivity {
     }
 
     private void bindViews() {
-        tvBack = findViewById(R.id.tv_back);
-        btn15 = findViewById(R.id.btn_timer_15);
-        btn25 = findViewById(R.id.btn_timer_25);
-        btn30 = findViewById(R.id.btn_timer_30);
-        btn45 = findViewById(R.id.btn_timer_45);
-        btn60 = findViewById(R.id.btn_timer_60);
-        btnTimerStart = findViewById(R.id.btn_timer_start);
-        tvSelectedDurationLabel = findViewById(R.id.tv_selected_duration_label);
-        tvTimerDisplay = findViewById(R.id.tv_timer_display);
-        tvTodayActual = findViewById(R.id.tv_today_actual);
-        tvTodayGoalNum = findViewById(R.id.tv_today_goal_num);
-        progressToday = findViewById(R.id.progress_today);
+        tvBack = findViewById(R.id.tvBack);
+        btn15 = findViewById(R.id.btnTimer15);
+        btn25 = findViewById(R.id.btnTimer25);
+        btn30 = findViewById(R.id.btnTimer30);
+        btn45 = findViewById(R.id.btnTimer45);
+        btn60 = findViewById(R.id.btnTimer60);
+        btnTimerStart = findViewById(R.id.btnTimerStart);
+        tvSelectedDurationLabel = findViewById(R.id.tvSelectedDurationLabel);
+        tvTimerDisplay = findViewById(R.id.tvTimerDisplay);
+        tvTodayActual = findViewById(R.id.tvTodayActual);
+        tvTodayGoalNum = findViewById(R.id.tvTodayGoalNum);
+        progressToday = findViewById(R.id.progressToday);
         
         tvBack.setOnClickListener(v -> finish());
     }
