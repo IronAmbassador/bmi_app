@@ -5,9 +5,7 @@
     android:background="#F5F7FA"
     android:orientation="vertical">
 
-    <!-- ═══════════════════════════════════════════════════ -->
-    <!--  顶部导航栏                                         -->
-    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- 顶部导航栏 -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -35,18 +33,28 @@
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
-
-        <!-- 右侧"删除目标"按钮（仅详情页可见，由代码控制） -->
-        <TextView
-            android:id="@+id/tv_delete_goal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-            android:text="删除"
-            android:textColor="#FFE0E0"
-            android:textSize="14sp"
-            android:padding="8dp"
-            android:visibility="gone" />
     </RelativeLayout>
+
+    <!-- 内容区域 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/history_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <TextView
+                android:id="@+id/tv_empty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="暂无记录"
+                android:textColor="#666666"
+                android:textSize="16sp"
+                android:padding="48dp" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

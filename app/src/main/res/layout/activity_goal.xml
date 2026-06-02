@@ -5,9 +5,7 @@
     android:background="#F5F7FA"
     android:orientation="vertical">
 
-    <!-- ═══════════════════════════════════════════════════ -->
-    <!--  顶部导航栏                                         -->
-    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- 顶部导航栏 -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -35,18 +33,134 @@
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
-
-        <!-- 右侧"删除目标"按钮（仅详情页可见，由代码控制） -->
-        <TextView
-            android:id="@+id/tv_delete_goal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentEnd="true"
-            android:text="删除"
-            android:textColor="#FFE0E0"
-            android:textSize="14sp"
-            android:padding="8dp"
-            android:visibility="gone" />
     </RelativeLayout>
+
+    <!-- 内容区域 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- BMI目标 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:elevation="2dp"
+                android:layout_marginBottom="16dp"
+                android:radius="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="目标BMI"
+                    android:textColor="#114D84"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/et_target_bmi"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="12dp"
+                    android:background="#F5F7FA"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:hint="请输入目标BMI"
+                    android:inputType="numberDecimal" />
+
+                <Button
+                    android:id="@+id/btn_save_bmi_goal"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:text="保存BMI目标"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/btn_green_full" />
+            </LinearLayout>
+
+            <!-- 每日运动目标 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:elevation="2dp"
+                android:layout_marginBottom="16dp"
+                android:radius="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="每日运动目标"
+                    android:textColor="#114D84"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/et_target_minutes"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="12dp"
+                    android:background="#F5F7FA"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:hint="请输入每日运动分钟数"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/btn_save_exercise_goal"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:text="保存运动目标"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/btn_green_full" />
+            </LinearLayout>
+
+            <!-- 当前目标显示 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:elevation="2dp"
+                android:layout_marginBottom="16dp"
+                android:radius="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前目标"
+                    android:textColor="#114D84"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_current_bmi_goal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="目标BMI: --"
+                    android:textColor="#666666" />
+
+                <TextView
+                    android:id="@+id/tv_current_exercise_goal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="每日运动: -- 分钟"
+                    android:textColor="#666666" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
